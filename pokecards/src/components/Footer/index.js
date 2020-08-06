@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-import { FooterStyle } from './styles';
-
 class Footer extends Component {
   render() {
     return (
-      // <>
-      //   <View style={{ flex: 1 }}>
-      //     <FooterStyle><Text>My fixed footer</Text></FooterStyle>
-      //   </View>
-      // </>
       <View style={styles.footer}>
-        <Text>My Footer</Text>
+        <Text style={styles.text}>Footer</Text>
       </View>
     );
   }
@@ -26,5 +19,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 50
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
   }
 })
