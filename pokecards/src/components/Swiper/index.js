@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import Swiper from "react-native-web-swiper";
+
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faArrowCircleRight, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
+
 import CardsLayout from '../Cards/CardsLayout';
 
 export default class Carousel extends Component {
@@ -15,13 +19,14 @@ export default class Carousel extends Component {
               dotsTouchable: true,
               prevPos: 'left',
               nextPos: 'right',
-              nextTitle: '>',
-              nextTitleStyle: { color: 'red', fontSize: 24, fontWeight: '500' },
               PrevComponent: ({ onPress }) => (
                 <TouchableOpacity onPress={onPress}>
-                  <Text style={{ color: 'white', fontSize: 24, fontWeight: '500' }}>
-                    {'<'}
-                  </Text>
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft} size={48} />
+                </TouchableOpacity>
+              ),
+              NextComponent: ({ onPress }) => (
+                <TouchableOpacity onPress={onPress}>
+                  <FontAwesomeIcon icon={faArrowCircleRight} size={48} />
                 </TouchableOpacity>
               ),
             }}
