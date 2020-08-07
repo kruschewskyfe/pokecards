@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Dimensions, StyleSheet } from 'react-native';
 
 import { Container, InlineCard } from './styles';
 
@@ -8,7 +8,10 @@ import CardDragonite from '../CardDragonite';
 import CardEevee from '../CardEevee';
 import CardLendario from '../CardLendario';
 
-class CardsLayout extends Component {
+const window = Dimensions.get("window");
+const screen = Dimensions.get("screen");
+
+export default class CardsLayout extends Component {
   constructor(props) {
     super(props);
 
@@ -51,4 +54,8 @@ class CardsLayout extends Component {
 
 }
 
-export default CardsLayout;
+const styles = StyleSheet.create({
+  viewWindow: {
+    maxHeight: window.height - 120,
+  }
+})

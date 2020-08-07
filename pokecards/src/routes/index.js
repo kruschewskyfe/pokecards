@@ -7,10 +7,10 @@ import SignIn from '../pages/SignIn';
 const AppNavigation = createStackNavigator();
 
 const AppRoutes = () => (
-    <AppNavigation.Navigator>
-        <AppNavigation.Screen name="Home" component={Home} />
-        <AppNavigation.Screen name="SignIn" component={SignIn} />
-    </AppNavigation.Navigator>
+  <AppNavigation.Navigator headerMode="none">
+    <AppNavigation.Screen name="Home" component={Home} />
+    <AppNavigation.Screen name="SignIn" component={SignIn} />
+  </AppNavigation.Navigator>
 );
 
 export default AppRoutes;

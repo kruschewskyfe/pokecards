@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, StatusBar, Text } from 'react-native';
+import { Header, Footer } from 'native-base';
 
 import Layout from '../../components/Cards/CardsLayout';
-import Footer from '../../components/Footer';
+import Carousel from '../../components/Swiper';
 
 class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      currentLayout: 1
+      currentLayout: 1,
     };
+  }
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
   }
 
   render() {
 
     return (
       <>
-        <View style={styles.container}>
-          <View style={styles.body}>
-            <Layout arrayTag={["pikachu", "dragonite", "lendario", "eevee"]} />
-          </View>
-          <Footer />
-        </View>
+        <Header androidStatusBarColor="#573ea8" style={styles.header} hasTabs>
+          <Text style={styles.text}>Header</Text>
+        </Header>
+        <Carousel />
+        <Footer>
+          <Text style={styles.text}>Footer</Text>
+        </Footer>
+
       </>
     )
   }
@@ -41,5 +48,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'skyblue',
     justifyContent: 'center',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
   }
 })
