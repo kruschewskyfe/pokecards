@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Dimensions, StyleSheet } from 'react-native';
-
-import { Container, InlineCard } from './styles';
+import { View, StyleSheet } from 'react-native';
 
 import CardPikachu from '../CardPikachu';
 import CardDragonite from '../CardDragonite';
 import CardEevee from '../CardEevee';
 import CardAquatico from '../CardAquatico';
-
-
-const window = Dimensions.get("window");
-const screen = Dimensions.get("screen");
 
 export default class CardsLayout extends Component {
   constructor(props) {
@@ -37,18 +31,16 @@ export default class CardsLayout extends Component {
 
     return (
       <>
-        <ScrollView>
-          <Container>
-            <InlineCard>
-              <Card1 />
-              <Card2 />
-            </InlineCard>
-            <InlineCard>
-              <Card3 />
-              <Card4 />
-            </InlineCard>
-          </Container>
-        </ScrollView>
+        <View style={{ flex: 1 }}>
+          <View style={styles.inline}>
+            <Card1 />
+            <Card2 />
+          </View>
+          <View style={styles.inline}>
+            <Card3 />
+            <Card4 />
+          </View>
+        </View>
       </>
     )
   }
@@ -56,7 +48,10 @@ export default class CardsLayout extends Component {
 }
 
 const styles = StyleSheet.create({
-  viewWindow: {
-    maxHeight: window.height - 120,
+  inline: {
+    flex: 1,
+    flexDirection: "row",
+    padding: 0,
+    margin: 0
   }
 })

@@ -21,20 +21,6 @@ export default class CardAquatico extends Component {
           }}
           title="Water Type"
         />
-        <CardTitle
-          subtitle="Water type pokemon having fun!"
-          style={{ color: '#FEB557' }}
-        />
-        <CardContent text="[+] information" />
-        <CardAction separator inColumn>
-          <CardButton
-            onPress={() => {
-              console.log('Deu')
-            }}
-            title="Click here"
-            color="#FEB557"
-          />
-        </CardAction>
       </Card>
     );
   }

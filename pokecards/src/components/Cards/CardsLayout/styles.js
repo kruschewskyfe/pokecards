@@ -16,6 +16,7 @@ export const Title = styled.Text`
 `;
 
 export const InlineCard = styled.View`
+  flex: 1;
   flex-direction: row;
   padding: 5px;
 `;

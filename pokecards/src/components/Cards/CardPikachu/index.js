@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Card,
   CardTitle,
@@ -21,21 +22,13 @@ export default class CardPikachu extends Component {
           }}
           title="Pikachu"
         />
-        <CardTitle
-          subtitle="This is Pikachu, Ash's best friend..."
-          style={{ color: '#FEB557' }}
-        />
-        <CardContent text="[+] information" />
-        <CardAction separator inColumn>
-          <CardButton
-            onPress={() => {
-              console.log('Deu');
-            }}
-            title="Click here"
-            color="#FEB557"
-          />
-        </CardAction>
       </Card>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  card: {
+    flex: 1
+  }
+})

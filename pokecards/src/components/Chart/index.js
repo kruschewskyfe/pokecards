@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Dimensions, Text } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
-class Chart extends Component {
+export default class Chart extends Component {
   render() {
 
     return (
@@ -55,5 +55,3 @@ class Chart extends Component {
     );
   }
 }
-
-export default Chart;

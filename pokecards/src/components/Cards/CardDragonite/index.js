@@ -21,20 +21,6 @@ export default class CardDragonite extends Component {
           }}
           title="Dragonite"
         />
-        <CardTitle
-          subtitle="After 22 years, Ash finally catches a Dragonite..."
-          style={{ color: '#FEB557' }}
-        />
-        <CardContent text="[+] information" />
-        <CardAction separator inColumn>
-          <CardButton
-            onPress={() => {
-              console.log('Deu')
-            }}
-            title="Click here"
-            color="#FEB557"
-          />
-        </CardAction>
       </Card>
     );
   }

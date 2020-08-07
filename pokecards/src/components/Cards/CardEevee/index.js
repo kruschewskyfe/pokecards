@@ -21,20 +21,6 @@ export default class CardEevee extends Component {
           }}
           title="Eeveelutions"
         />
-        <CardTitle
-          subtitle="Eevees fo every one!!!"
-          style={{ color: '#FEB557' }}
-        />
-        <CardContent text="[+] information" />
-        <CardAction separator inColumn>
-          <CardButton
-            onPress={() => {
-              console.log('Deu');
-            }}
-            title="Click here"
-            color="#FEB557"
-          />
-        </CardAction>
       </Card>
     );
   }
