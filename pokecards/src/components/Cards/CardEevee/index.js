@@ -10,7 +10,7 @@ import {
 
 import { Container } from './styles';
 
-class CardEevee extends Component {
+export default class CardEevee extends Component {
   render() {
     return (
       <Card>
@@ -39,5 +39,3 @@ class CardEevee extends Component {
     );
   }
 }
-
-export default CardEevee;

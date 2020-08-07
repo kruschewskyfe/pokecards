@@ -10,7 +10,7 @@ import {
 
 import { Container } from './styles';
 
-class CardLendario extends Component {
+export default class CardLendario extends Component {
   render() {
     return (
       <Card>
@@ -39,5 +39,3 @@ class CardLendario extends Component {
     );
   }
 }
-
-export default CardLendario;

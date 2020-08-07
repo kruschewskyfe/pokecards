@@ -10,19 +10,19 @@ import {
 
 import { Container } from './styles';
 
-export default class CardDragonite extends Component {
+export default class CardAquatico extends Component {
   render() {
     return (
       <Card>
         <CardImage
           source={{
             uri:
-              'https://cdn.ome.lt/UnpABMCI8J2fK5va3EGJtqP9ZQg=/1200x630/smart/extras/conteudos/dragonite-320.png',
+              'https://i.pinimg.com/originals/82/4a/ce/824ace8669d672e8d9ba4990c418846f.jpg',
           }}
-          title="Dragonite"
+          title="Water Type"
         />
         <CardTitle
-          subtitle="After 22 years, Ash finally catches a Dragonite..."
+          subtitle="Water type pokemon having fun!"
           style={{ color: '#FEB557' }}
         />
         <CardContent text="[+] information" />

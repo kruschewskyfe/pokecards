@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, StyleSheet, StatusBar, Text } from 'react-native';
 import { Header, Footer } from 'native-base';
 
-import Layout from '../../components/Cards/CardsLayout';
-import Carousel from '../../components/Swiper';
+import CardsLayout from '../../components/Cards/CardsLayout';
+import Carousel from '../../components/Carousel';
 
 class Home extends Component {
 

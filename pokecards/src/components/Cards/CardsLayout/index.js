@@ -6,7 +6,8 @@ import { Container, InlineCard } from './styles';
 import CardPikachu from '../CardPikachu';
 import CardDragonite from '../CardDragonite';
 import CardEevee from '../CardEevee';
-import CardLendario from '../CardLendario';
+import CardAquatico from '../CardAquatico';
+
 
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -24,7 +25,7 @@ export default class CardsLayout extends Component {
     pikachu: CardPikachu,
     dragonite: CardDragonite,
     eevee: CardEevee,
-    lendario: CardLendario
+    aquatico: CardAquatico,
   };
 
   render() {

@@ -10,7 +10,7 @@ import {
 
 import { Container } from './styles';
 
-class CardPikachu extends Component {
+export default class CardPikachu extends Component {
   render() {
     return (
       <Card>
@@ -39,5 +39,3 @@ class CardPikachu extends Component {
     );
   }
 }
-
-export default CardPikachu;
