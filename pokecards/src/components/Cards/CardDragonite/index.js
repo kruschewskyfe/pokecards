@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 import {
   Card,
   CardTitle,
@@ -13,7 +14,7 @@ import { Container } from './styles';
 export default class CardDragonite extends Component {
   render() {
     return (
-      <Card>
+      <Card style={styles.borderClass}>
         <CardImage
           source={{
             uri:
@@ -26,3 +27,16 @@ export default class CardDragonite extends Component {
   }
 };
 
+const styles = StyleSheet.create({
+  borderClass:
+  {
+    // Set border width.
+    borderWidth: 10,
+
+    // Set border Hex Color Code Here.
+    borderColor: 'transparent',
+
+    // Set border Radius.
+    borderRadius: 10
+  },
+})

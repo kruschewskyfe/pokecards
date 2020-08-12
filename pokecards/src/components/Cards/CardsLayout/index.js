@@ -31,7 +31,7 @@ export default class CardsLayout extends Component {
 
     return (
       <>
-        <View style={{ flex: 1 }}>
+        <View style={styles.mainContainer}>
           <View style={styles.inline}>
             <Card1 />
             <Card2 />
@@ -48,6 +48,15 @@ export default class CardsLayout extends Component {
 }
 
 const styles = StyleSheet.create({
+  mainContainer:
+  {
+    flex: 1,
+    // Set content's vertical alignment.
+    justifyContent: 'center',
+    // Set content's horizontal alignment.
+    alignItems: 'center',
+    backgroundColor: '#FFF8E1',
+  },
   inline: {
     flex: 1,
     flexDirection: "row",

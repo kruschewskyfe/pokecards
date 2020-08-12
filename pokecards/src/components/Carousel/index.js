@@ -1,34 +1,8 @@
 import React, { Component } from 'react'
-import { View, Image, StatusBar, Dimensions } from 'react-native'
+import { View, Image, StatusBar, Dimensions, StyleSheet } from 'react-native'
 import Swiper from 'react-native-swiper'
 import CardsLayout from '../Cards/CardsLayout';
 const { width, height } = Dimensions.get('window')
-
-const styles = {
-  wrapper: {
-    // backgroundColor: '#f00'
-  },
-
-  slide: {
-    flex: 1,
-    backgroundColor: 'transparent'
-  },
-  container: {
-    flex: 1
-  },
-
-  imgBackground: {
-    width,
-    height,
-    backgroundColor: 'transparent',
-    position: 'absolute'
-  },
-
-  image: {
-    width,
-    height
-  }
-}
 
 export default class Carousel extends Component {
   render() {
@@ -91,3 +65,38 @@ export default class Carousel extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    // backgroundColor: '#f00'
+  },
+
+  slide: {
+    flex: 1,
+    backgroundColor: 'transparent'
+  },
+  container: {
+    flex: 1,
+  },
+
+  imgBackground: {
+    width,
+    height,
+    backgroundColor: 'transparent',
+    position: 'absolute'
+  },
+
+  image: {
+    width,
+    height,
+    flex: 1,
+    // Set border width.
+    borderWidth: 10,
+
+    // Set border Hex Color Code Here.
+    borderColor: 'transparent',
+
+    // Set border Radius.
+    borderRadius: 10
+  }
+})

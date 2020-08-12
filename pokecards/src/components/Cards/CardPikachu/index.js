@@ -14,8 +14,8 @@ import { Container } from './styles';
 export default class CardPikachu extends Component {
   render() {
     return (
-      <Card>
-        <CardImage
+      <Card style={styles.borderClass}>
+        <CardImage style={{ flex: 1, borderRadius: 10 }}
           source={{
             uri:
               'https://abrilmdemulher.files.wordpress.com/2017/08/filtro-pikachu-snapchat.jpg?quality=90&strip=info&w=1024',
@@ -28,7 +28,15 @@ export default class CardPikachu extends Component {
 }
 
 const styles = StyleSheet.create({
-  card: {
-    flex: 1
-  }
+  borderClass:
+  {
+    // Set border width.
+    borderWidth: 10,
+
+    // Set border Hex Color Code Here.
+    borderColor: 'transparent',
+
+    // Set border Radius.
+    borderRadius: 10
+  },
 })
