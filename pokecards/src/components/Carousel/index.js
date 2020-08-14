@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { View, Image, StatusBar, Dimensions, StyleSheet } from 'react-native'
+import { View, Image, StatusBar, Dimensions, StyleSheet, Text } from 'react-native'
 import Swiper from 'react-native-swiper'
 import CardsLayout from '../Cards/CardsLayout';
+import { InlineCard, VerticalCard } from './styles';
+
 const { width, height } = Dimensions.get('window')
 
 export default class Carousel extends Component {
@@ -10,7 +12,6 @@ export default class Carousel extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Swiper
-          style={styles.wrapper}
           dot={
             <View
               style={{
@@ -41,24 +42,28 @@ export default class Carousel extends Component {
           loop={false}
         >
           <View style={styles.slide}>
-            <CardsLayout arrayTag={["pikachu", "dragonite", "aquatico", "eevee"]} />
+            <CardsLayout type="cardEevee" />
+          </View>
+          <View style={styles.slideDoisCards}>
+            <CardsLayout type="cardPikachu" />
+            <CardsLayout type="cardEevee" />
+          </View>
+          <View style={styles.slideDoisCards}>
+            <CardsLayout type="cardEevee" />
+            <VerticalCard>
+              <CardsLayout type="cardDragonite" />
+              <CardsLayout type="cardAquatico" />
+            </VerticalCard>
           </View>
           <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={{ uri: "https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg" }}
-              resizeMode="cover"
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={{ uri: "https://cdn.ome.lt/UnpABMCI8J2fK5va3EGJtqP9ZQg=/1200x630/smart/extras/conteudos/dragonite-320.png" }}
-              resizeMode="cover"
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image style={styles.image} source={{ uri: "https://i.pinimg.com/originals/82/4a/ce/824ace8669d672e8d9ba4990c418846f.jpg" }} />
+            <InlineCard>
+              <CardsLayout type="cardPikachu" />
+              <CardsLayout type="cardDragonite" />
+            </InlineCard>
+            <InlineCard>
+              <CardsLayout type="cardEevee" />
+              <CardsLayout type="cardAquatico" />
+            </InlineCard>
           </View>
         </Swiper>
       </View>
@@ -90,13 +95,20 @@ const styles = StyleSheet.create({
     width,
     height,
     flex: 1,
-    // Set border width.
     borderWidth: 10,
-
-    // Set border Hex Color Code Here.
     borderColor: 'transparent',
-
-    // Set border Radius.
     borderRadius: 10
+  },
+  slideDoisCards: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: "row",
+  },
+  slideQuatroCards: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    padding: 5,
   }
+
 })

@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
 
     // Set border Radius.
-    borderRadius: 10
+    borderRadius: 10,
+    overflow: "hidden"
   },
 })
