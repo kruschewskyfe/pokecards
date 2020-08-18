@@ -9,24 +9,22 @@ import {
   CardImage,
 } from 'react-native-cards';
 
-import { Container } from './styles';
-
-export default class CardPikachu extends Component {
-  render() {
-    return (
-      <Card style={styles.borderClass}>
-        <CardImage
-          source={{
-            uri:
-              'https://abrilmdemulher.files.wordpress.com/2017/08/filtro-pikachu-snapchat.jpg?quality=90&strip=info&w=1024',
-          }}
-          title="Pikachu"
-        />
-        {/* <Image source={{ uri: 'https://abrilmdemulher.files.wordpress.com/2017/08/filtro-pikachu-snapchat.jpg?quality=90&strip=info&w=1024' }} /> */}
-      </Card>
-    );
-  }
+const CardPikachu = ({ type }) => {
+  return (
+    <Card style={styles.borderClass}>
+      <CardImage
+        type={type}
+        title="Pikachu"
+        source={{
+          uri:
+            'https://abrilmdemulher.files.wordpress.com/2017/08/filtro-pikachu-snapchat.jpg?quality=90&strip=info&w=1024',
+        }}
+      />
+    </Card>
+  )
 }
+
+export default CardPikachu;
 
 const styles = StyleSheet.create({
   borderClass:
@@ -40,6 +38,6 @@ const styles = StyleSheet.create({
     // Set border Radius.
     borderRadius: 10,
     overflow: "hidden",
-    backgroundColor: "#312e38"
+    backgroundColor: "transparent"
   },
 })

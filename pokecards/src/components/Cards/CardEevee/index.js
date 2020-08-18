@@ -9,23 +9,35 @@ import {
   CardImage,
 } from 'react-native-cards';
 
-import { Container } from './styles';
+const CardEevee = ({ type }) => (
+  <Card style={styles.borderClass}>
+    <CardImage
+      type={type}
+      title="Eeveelutions"
+      source={{
+        uri:
+          'https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg',
+      }}
+    />
+  </Card>
+)
 
-export default class CardEevee extends Component {
-  render() {
-    return (
-      <Card style={styles.borderClass}>
-        <CardImage
-          source={{
-            uri:
-              'https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg',
-          }}
-          title="Eeveelutions"
-        />
-      </Card>
-    );
-  }
-}
+export default CardEevee;
+// export default class CardEevee extends Component {
+//   render() {
+//     return (
+//       <Card style={styles.borderClass}>
+//         <CardImage
+//           source={{
+//             uri:
+//               'https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg',
+//           }}
+//           title="Eeveelutions"
+//         />
+//       </Card>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
   borderClass:
@@ -38,6 +50,7 @@ const styles = StyleSheet.create({
 
     // Set border Radius.
     borderRadius: 10,
-    overflow: "hidden"
+    overflow: "hidden",
+    backgroundColor: "transparent"
   },
 })

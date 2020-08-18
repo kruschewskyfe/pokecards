@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, StatusBar, Text } from 'react-native';
-import { Header, Footer } from 'native-base';
+import { Header, Footer, Left, Button, Body, Title } from 'native-base';
+import Icon from 'react-native-vector-icons/Entypo';
 
 import CardsLayout from '../../components/Cards/CardsLayout';
-import Carousel from '../../components/Carousel';
+import Menu from '../../components/Menu';
+
+import { Dashboards } from '../../components/DashboardList/dashboard';
+
+const myIcon = <Icon name="menu" size={40} color="#fff" />
 
 class Home extends Component {
 
@@ -12,6 +17,7 @@ class Home extends Component {
     this.state = {
       currentLayout: 1,
     };
+    console.log(this.props.navigation.state);
   }
 
   componentDidMount() {
@@ -22,36 +28,40 @@ class Home extends Component {
 
     return (
       <>
-        <Header androidStatusBarColor="#573ea8" style={styles.header} hasTabs>
-          <Text style={styles.text}>Header</Text>
+        <Header androidStatusBarColor="#573ea8" hasTabs>
+          <Left>
+            <Button transparent>
+              {myIcon}
+            </Button>
+          </Left>
+          <Body>
+            <Title style={styles.header}>Trading platform</Title>
+          </Body>
         </Header>
-        <Carousel />
+        <Menu />
+        <CardsLayout listCards={this.props.listCards == null ? Dashboards[0].listCards : this.props.listCards} />
         <Footer>
-          <Text style={styles.text}>Footer</Text>
+          <Text style={styles.footer}>Footer</Text>
         </Footer>
 
       </>
     )
   }
-
 }
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#F5FCFF',
-    flex: 1,
-    justifyContent: 'center',
-  },
-  body: {
-    flex: 1,
-    backgroundColor: 'skyblue',
-    justifyContent: 'center',
-  },
-  text: {
+  header: {
     color: '#fff',
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginLeft: 70
+  },
+  footer: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginLeft: 40
   }
 })

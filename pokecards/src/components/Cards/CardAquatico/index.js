@@ -9,11 +9,10 @@ import {
   CardImage,
 } from 'react-native-cards';
 
-const CardAquatico = ({ name }) => (
+const CardAquatico = ({ type }) => (
   <Card style={styles.borderClass}>
     <CardImage
-      name={name}
-      type="cardAquatico"
+      type={type}
       title="Water Type"
       source={{
         uri:
@@ -52,6 +51,7 @@ const styles = StyleSheet.create({
 
     // Set border Radius.
     borderRadius: 10,
-    overflow: "hidden"
+    overflow: "hidden",
+    backgroundColor: "transparent"
   },
 })
