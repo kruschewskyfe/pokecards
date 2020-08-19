@@ -10,43 +10,27 @@ import { Dashboards } from '../../components/DashboardList/dashboard';
 
 const myIcon = <Icon name="menu" size={40} color="#fff" />
 
-class Home extends Component {
+const Home = ({ route, navigation }) => {
+  return (
+    <>
+      <Header androidStatusBarColor="#573ea8" hasTabs>
+        <Left>
+          <Button transparent>
+            {myIcon}
+          </Button>
+        </Left>
+        <Body>
+          <Title style={styles.header}>Trading platform</Title>
+        </Body>
+      </Header>
+      <Menu />
+      <CardsLayout listCards={route.params == null ? Dashboards[4].listCards : route.params.cardList.listCards} />
+      <Footer>
+        <Text style={styles.footer}>Footer</Text>
+      </Footer>
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentLayout: 1,
-    };
-    console.log(this.props.navigation.state);
-  }
-
-  componentDidMount() {
-    StatusBar.setHidden(true);
-  }
-
-  render() {
-
-    return (
-      <>
-        <Header androidStatusBarColor="#573ea8" hasTabs>
-          <Left>
-            <Button transparent>
-              {myIcon}
-            </Button>
-          </Left>
-          <Body>
-            <Title style={styles.header}>Trading platform</Title>
-          </Body>
-        </Header>
-        <Menu />
-        <CardsLayout listCards={this.props.listCards == null ? Dashboards[0].listCards : this.props.listCards} />
-        <Footer>
-          <Text style={styles.footer}>Footer</Text>
-        </Footer>
-
-      </>
-    )
-  }
+    </>
+  )
 }
 
 export default Home;

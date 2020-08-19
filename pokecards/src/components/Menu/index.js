@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { Container, ButtonItem, TextButton, GroupButtons } from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconNotification from 'react-native-vector-icons/MaterialIcons';

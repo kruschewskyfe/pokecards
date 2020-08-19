@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import { Dashboards } from './dashboard';
 import { ListItem, Left, Thumbnail, Body, Header, Footer, Right } from 'native-base';
 
-const DashboardList = () => {
-  const usenavigation = useNavigation();
+const DashboardList = ({ navigation }) => {
 
   return (
     <>
@@ -16,7 +17,7 @@ const DashboardList = () => {
         </Header>
         <Suspense>
           {Dashboards.map(item => (
-            <ListItem thumbnail key={item.id} style={styles.list} onPress={() => usenavigation.navigate('Home', { cardList: item.listCards })}>
+            <ListItem thumbnail key={item.id} style={styles.list} onPress={() => navigation.navigate('Home', { cardList: item })}>
               <Left>
                 <Thumbnail square source={{ uri: item.image }} style={styles.image} />
               </Left>
@@ -29,7 +30,7 @@ const DashboardList = () => {
         </Suspense>
       </View>
       <Footer>
-        <Button title="Voltar" style={styles.footer} onPress={() => usenavigation.goBack()} />
+        <Button title="Voltar" style={styles.footer} onPress={() => navigation.goBack()} />
       </Footer>
     </>
   )

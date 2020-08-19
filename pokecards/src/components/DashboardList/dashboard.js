@@ -6,25 +6,29 @@ export const Dashboards = [
     "description": "Use this to see all 4 cards",
     "listCards": [
       {
-        "name": "card1",
+        "id": "1",
+        "name": "eevee",
         "props": {
           "type": "eevee"
         }
       },
       {
-        "name": "card2",
+        "id": "2",
+        "name": "pikachu",
         "props": {
           "type": "pikachu"
         }
       },
       {
-        "name": "card3",
+        "id": "3",
+        "name": "aquatico",
         "props": {
           "type": "aquatico"
         }
       },
       {
-        "name": "card4",
+        "id": "4",
+        "name": "dragonite",
         "props": {
           "type": "dragonite"
         }
@@ -38,13 +42,15 @@ export const Dashboards = [
     "description": "Use this to see just 2 cards",
     "listCards": [
       {
-        "name": "card1",
+        "id": "1",
+        "name": "aquatico",
         "props": {
           "type": "aquatico"
         }
       },
       {
-        "name": "card2",
+        "id": "2",
+        "name": "pikachu",
         "props": {
           "type": "pikachu"
         }
@@ -58,7 +64,8 @@ export const Dashboards = [
     "description": "Use this to see just 1 card",
     "listCards": [
       {
-        "name": "card1",
+        "id": "1",
+        "name": "dragonite",
         "props": {
           "type": "dragonite"
         }
@@ -72,23 +79,62 @@ export const Dashboards = [
     "description": "Use this to see just 3 cards",
     "listCards": [
       {
-        "name": "card1",
+        "id": "1",
+        "name": "pikachu",
         "props": {
           "type": "pikachu"
         }
       },
       {
-        "name": "card2",
+        "id": "2",
+        "name": "dragonite",
         "props": {
           "type": "dragonite"
         }
       },
       {
-        "name": "card3",
+        "id": "3",
+        "name": "eevee",
         "props": {
           "type": "eevee"
         }
       }
     ]
-  }
+  },
+  {
+    "id": "5",
+    "name": "Dashboard 4 Cards",
+    "image": "https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg",
+    "description": "Use this to see all 4 cards",
+    "listCards": [
+      {
+        "id": "1",
+        "name": "eevee",
+        "props": {
+          "type": "eevee"
+        }
+      },
+      {
+        "id": "2",
+        "name": "eevee",
+        "props": {
+          "type": "eevee"
+        }
+      },
+      {
+        "id": "3",
+        "name": "eevee",
+        "props": {
+          "type": "eevee"
+        }
+      },
+      {
+        "id": "4",
+        "name": "eevee",
+        "props": {
+          "type": "eevee"
+        }
+      }
+    ]
+  },
 ]

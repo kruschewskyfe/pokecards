@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-class SignIn extends Component {
-  render(){
-    return(<View />)
-  }
+const SignIn = ({ route, navigation }) => {
+  const { cardList } = route.params
+
+  console.log(cardList)
+
+  return (
+    <View>
+      <Text>Olá Teste</Text>
+    </View>
+  )
 }
 
 export default SignIn;
