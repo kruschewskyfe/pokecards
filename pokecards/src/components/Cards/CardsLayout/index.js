@@ -5,6 +5,7 @@ import CardPikachu from '../CardPikachu';
 import CardDragonite from '../CardDragonite';
 import CardEevee from '../CardEevee';
 import CardAquatico from '../CardAquatico';
+import ChartExample from '../Chart';
 
 export default class CardsLayout extends Component {
 
@@ -13,9 +14,49 @@ export default class CardsLayout extends Component {
     dragonite: CardDragonite,
     eevee: CardEevee,
     aquatico: CardAquatico,
+    chart: ChartExample
   };
 
-  renderer(card) {
+  rendererInline(listLines) {
+    if (listLines.length == 1 && listLines[0].length == 2) {
+      console.log(listLines)
+      return [
+        React.createElement(
+          View,
+          {
+            style: styles.inline
+          },
+          [
+            listLines[0].map(card => this.rendererCards(card))
+          ]
+        ),
+        React.createElement(
+          View,
+          {
+            style: styles.inline
+          },
+          []
+        )
+      ]
+    }
+    else {
+      return [
+        listLines.map(listCards => {
+          return React.createElement(
+            View,
+            {
+              style: styles.inline
+            },
+            [
+              listCards.map(card => this.rendererCards(card))
+            ]
+          );
+        })
+      ]
+    }
+  }
+
+  rendererCards(card) {
     if (typeof this.components[card.name] !== "undefined") {
       return React.createElement(this.components[card.name], {
         key: card.id,
@@ -26,14 +67,10 @@ export default class CardsLayout extends Component {
 
   render() {
     const arrayItems = this.props.listCards.length
-    const array1 = [this.props.listCards[0], this.props.listCards[1]]
-    const array2 = [this.props.listCards[2]]
-    const array3 = [this.props.listCards[2], this.props.listCards[3]]
 
     const cardperline = 2
     let offset = 0
     const numberOfLines = Math.floor(this.props.listCards.length / cardperline)
-    console.log(numberOfLines)
 
     const listLines = []
     if (numberOfLines > 0) {
@@ -48,7 +85,6 @@ export default class CardsLayout extends Component {
     }
 
     const missingCards = arrayItems % cardperline
-    console.log(missingCards)
     if (arrayItems % cardperline != 0) {
       const lastLine = [];
       for (let i = 0; i < (arrayItems % cardperline); i++) {
@@ -57,76 +93,14 @@ export default class CardsLayout extends Component {
       listLines.push(lastLine)
     }
 
-    console.log(listLines)
-
 
     return (
       <>
         <View style={styles.mainContainer}>
-          <View style={styles.inline}>
-            {listLines[0].map(card => this.renderer(card))}
-          </View>
-          <View style={styles.inline}>
-            {listLines.length > 1 ? listLines[1].map(card => this.renderer(card)) : <View />}
-          </View>
+          {this.rendererInline(listLines)}
         </View>
       </>
     )
-
-    // switch (arrayItems) {
-    //   case 1:
-    //     return (
-    //       <>
-    //         <View style={styles.mainContainer}>
-    //           <View style={styles.inline}>
-    //             {this.props.listCards.map(card => this.renderer(card))}
-    //           </View>
-    //         </View>
-    //       </>
-    //     )
-    //     break;
-    //   case 2:
-    //     return (
-    //       <>
-    //         <View style={styles.mainContainer}>
-    //           <View style={styles.inline}>
-    //             {this.props.listCards.map(card => this.renderer(card))}
-    //           </View>
-    //         </View>
-    //       </>
-    //     )
-    //     break;
-    //   case 3:
-    //     return (
-    //       <>
-    //         <View style={styles.mainContainer}>
-    //           <View style={styles.inline}>
-    //             {array1.map(card => this.renderer(card))}
-    //           </View>
-    //           <View style={styles.inline}>
-    //             {array2.map(card => this.renderer(card))}
-    //           </View>
-    //         </View>
-    //       </>
-    //     )
-    //     break;
-    //   case 4:
-    //     return (
-    //       <>
-    //         <View style={styles.mainContainer}>
-    //           <View style={styles.inline}>
-    //             {array1.map(card => this.renderer(card))}
-    //           </View>
-    //           <View style={styles.inline}>
-    //             {array3.map(card => this.renderer(card))}
-    //           </View>
-    //         </View>
-    //       </>
-    //     )
-    //     break;
-    // }
-
-
   }
 
 }
@@ -139,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // Set content's horizontal alignment.
     alignItems: 'center',
-    backgroundColor: '#FFF8E1',
+    backgroundColor: 'transparent',
   },
   inline: {
     flex: 1,

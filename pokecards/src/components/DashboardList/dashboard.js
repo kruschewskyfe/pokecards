@@ -87,16 +87,16 @@ export const Dashboards = [
       },
       {
         "id": "2",
-        "name": "dragonite",
+        "name": "chart",
         "props": {
-          "type": "dragonite"
+          "type": "chart"
         }
       },
       {
         "id": "3",
-        "name": "eevee",
+        "name": "chart",
         "props": {
-          "type": "eevee"
+          "type": "chart"
         }
       }
     ]
@@ -137,4 +137,19 @@ export const Dashboards = [
       }
     ]
   },
+  {
+    "id": "6",
+    "name": "Dashboard 1 Card",
+    "image": "https://www.clipartkey.com/mpngs/m/143-1430599_chart-line-line-chart-diagram-trend-upwards-up.png",
+    "description": "Use this to see just 1 card",
+    "listCards": [
+      {
+        "id": "1",
+        "name": "chart",
+        "props": {
+          "type": "chart"
+        }
+      }
+    ]
+  }
 ]

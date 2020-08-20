@@ -11,7 +11,7 @@ export const Container = styled.View`
 `;
 
 export const ButtonItem = styled.TouchableOpacity`
-	padding: 12px;
+	padding: 8px;
   border-radius: 50px;	
   align-content: center;
   background: ${props => props.color ? "#573ea8" : "transparent"};

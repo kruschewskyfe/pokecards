@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 
 import CardsLayout from '../../components/Cards/CardsLayout';
 import Menu from '../../components/Menu';
+import ChartExample from '../../components/Cards/Chart';
 
 import { Dashboards } from '../../components/DashboardList/dashboard';
 
@@ -28,7 +29,6 @@ const Home = ({ route, navigation }) => {
       <Footer>
         <Text style={styles.footer}>Footer</Text>
       </Footer>
-
     </>
   )
 }

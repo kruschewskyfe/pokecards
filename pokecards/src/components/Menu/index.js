@@ -16,12 +16,10 @@ const Menu = () => {
   return (
     <Container>
       <GroupButtons>
-        <ButtonItem>
-          <TextButton>{searchIcon}  Search</TextButton>
-        </ButtonItem>
-        <ButtonItem><TextButton>{screenIcon}  Screen</TextButton></ButtonItem>
-        <ButtonItem onPress={() => { navigation.navigate('Dashboard') }}><TextButton>{dashboardIcon}  Dashboard</TextButton></ButtonItem>
-        <ButtonItem><TextButton>{notificationsIcon}  Notifications</TextButton></ButtonItem>
+        <ButtonItem><TextButton>{searchIcon} Search</TextButton></ButtonItem>
+        <ButtonItem><TextButton>{screenIcon} Screen</TextButton></ButtonItem>
+        <ButtonItem onPress={() => { navigation.navigate('Dashboard') }}><TextButton>{dashboardIcon} Dashboard</TextButton></ButtonItem>
+        <ButtonItem><TextButton>{notificationsIcon} Notifications</TextButton></ButtonItem>
       </GroupButtons>
       <ButtonItem color end><TextButton color>New trade</TextButton></ButtonItem>
     </Container>
