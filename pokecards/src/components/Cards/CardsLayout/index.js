@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // Set content's horizontal alignment.
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    backgroundColor: '#ebebf0',
   },
   inline: {
     flex: 1,

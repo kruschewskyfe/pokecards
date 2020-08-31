@@ -48,17 +48,17 @@ export default DashboardList;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: '#ebebf0'
   },
   list: {
     alignSelf: "flex-start",
     height: windowHeight / 7,
     width: windowWidth / 2.15,
     borderWidth: 10,
-    borderColor: 'transparent',
+    borderColor: 'white',
     borderRadius: 10,
     margin: 5,
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     elevation: 8
   },
   image: {

@@ -24,22 +24,6 @@ const OrdersCard = ({ type }) => (
 
 export default OrdersCard;
 
-// export default class CardAquatico extends Component {
-//   render() {
-//     return (
-//       <Card style={styles.borderClass}>
-//         <CardImage
-//           source={{
-//             uri:
-//               'https://i.pinimg.com/originals/82/4a/ce/824ace8669d672e8d9ba4990c418846f.jpg',
-//           }}
-//           title="Water Type"
-//         />
-//       </Card>
-//     );
-//   }
-// };
-
 const styles = StyleSheet.create({
   borderClass:
   {
@@ -47,11 +31,11 @@ const styles = StyleSheet.create({
     borderWidth: 10,
 
     // Set border Hex Color Code Here.
-    borderColor: 'transparent',
+    borderColor: 'white',
 
     // Set border Radius.
     borderRadius: 10,
     overflow: "hidden",
-    backgroundColor: "transparent"
+    backgroundColor: "white"
   },
 })

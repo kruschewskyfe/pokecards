@@ -55,11 +55,11 @@ const styles = StyleSheet.create({
     borderWidth: 10,
 
     // Set border Hex Color Code Here.
-    borderColor: 'transparent',
+    borderColor: 'white',
 
     // Set border Radius.
     borderRadius: 10,
     overflow: "hidden",
-    backgroundColor: "transparent"
+    backgroundColor: "white"
   },
 })

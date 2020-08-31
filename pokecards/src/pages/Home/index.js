@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { Header, Footer, Left, Button, Body, Title } from 'native-base';
 import Icon from 'react-native-vector-icons/Entypo';
 
 import CardsLayout from '../../components/Cards/CardsLayout';
 import Menu from '../../components/Menu';
-import ChartExample from '../../components/Cards/Chart';
-
 import { Dashboards } from '../../services/dashboard';
 
 const myIcon = <Icon name="menu" size={40} color="#fff" />
 
 const Home = ({ route, navigation }) => {
   return (
-    <>
+    <View style={{ flex: 1, backgroundColor: "#ebebf0" }}>
       <Header androidStatusBarColor="#573ea8" hasTabs>
         <Left>
           <Button transparent>
@@ -29,7 +27,7 @@ const Home = ({ route, navigation }) => {
       <Footer>
         <Text style={styles.footer}>Footer</Text>
       </Footer>
-    </>
+    </View>
   )
 }
 
