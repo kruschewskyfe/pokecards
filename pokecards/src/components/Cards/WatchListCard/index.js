@@ -9,12 +9,12 @@ import {
   CardImage,
 } from 'react-native-cards';
 
-const CardPikachu = ({ type }) => {
+const WatchListCard = ({ type }) => {
   return (
     <Card style={styles.borderClass}>
       <CardImage
         type={type}
-        title="Pikachu"
+        title="WatchList"
         source={{
           uri:
             'https://abrilmdemulher.files.wordpress.com/2017/08/filtro-pikachu-snapchat.jpg?quality=90&strip=info&w=1024',
@@ -24,7 +24,7 @@ const CardPikachu = ({ type }) => {
   )
 }
 
-export default CardPikachu;
+export default WatchListCard;
 
 const styles = StyleSheet.create({
   borderClass:

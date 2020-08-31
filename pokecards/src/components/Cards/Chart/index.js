@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import {
   Card,
@@ -10,10 +10,13 @@ import EtcIcon from 'react-native-vector-icons/AntDesign';
 import * as shape from 'd3-shape'
 
 import { ChartData } from './chartData';
-import { ButtonItem, TextButton } from './styles';
+import { ButtonItem, TextButton, CircleButton } from './styles';
 
 const delayedIcon = <Icon name="back-in-time" size={22} color="#573ea8" />
 const etcIcon = <EtcIcon name="ellipsis1" size={40} color="#573ea8" />
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default class ChartExample extends React.PureComponent {
   render() {
@@ -24,31 +27,31 @@ export default class ChartExample extends React.PureComponent {
         {ChartData.map(item => (
           <CardContent key={item.id}>
             <Text style={styles.textChart}>ST {item.name} *</Text>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={{ fontSize: 18, color: "#2126c2" }}>MSFT:NASDAQ   -- </Text>
-              <Text style={{ fontSize: 18, color: "#d90707", paddingLeft: 10 }}>FOCUS LIST</Text>
+            <View style={{ flexDirection: "row", alignItems: "center", flex: 0.2 }}>
+              <Text style={{ fontSize: 0.01 * windowWidth, color: "#2126c2" }}>MSFT:NASDAQ   -- </Text>
+              <Text style={{ fontSize: 0.01 * windowWidth, color: "#d90707", paddingLeft: 10 }}>FOCUS LIST</Text>
             </View>
-            <View style={{ paddingTop: 20 }}>
-              <View>
+            <View style={{ height: 0.07 * windowHeight, flex: 1 }}>
+              <View style={{ flex: 0.5, paddingBottom: 10 }}>
                 <Text style={styles.textNote}>Last Price - USD</Text>
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                 <View style={styles.inline}>
                   <Text style={styles.textContent}>108.35</Text>
-                  <Text style={{ fontSize: 25, fontWeight: "bold", paddingLeft: 40 }}>3.2%</Text>
-                  <Text style={{ fontSize: 22, paddingLeft: 40 }}>{delayedIcon} Delayed</Text>
+                  <Text style={{ fontSize: 0.015 * windowWidth, fontWeight: "bold", paddingLeft: 40 }}>3.2%</Text>
+                  <Text style={{ fontSize: 0.015 * windowWidth, paddingLeft: 40 }}>{delayedIcon} Delayed</Text>
                 </View>
                 <View style={styles.inline}>
                   <ButtonItem>
                     <TextButton>Trade</TextButton>
                   </ButtonItem>
-                  <ButtonItem>
+                  <CircleButton>
                     <TextButton>{etcIcon}</TextButton>
-                  </ButtonItem>
+                  </CircleButton>
                 </View>
               </View>
             </View>
-            <View style={{ paddingTop: 20 }}>
+            <View style={{ height: 0.075 * windowHeight, flex: 1 }}>
               <View style={styles.inline}>
                 <Text style={styles.textNote}>Bid size</Text>
                 <Text style={styles.textNote}>Bid</Text>
@@ -64,7 +67,7 @@ export default class ChartExample extends React.PureComponent {
                 <Text style={styles.textContent}>{item.update}</Text>
               </View>
             </View>
-            <View style={{ paddingTop: 20 }}>
+            <View style={{ flex: 0.5 }}>
               <View style={styles.inline}>
                 <Text style={styles.textNote}>Low</Text>
                 <Text style={styles.textNote}>High</Text>
@@ -80,7 +83,7 @@ export default class ChartExample extends React.PureComponent {
                 <Text style={styles.textContent}>{item.volume}</Text>
               </View>
             </View>
-            <View style={{ paddingTop: 20 }}>
+            <View style={{ flex: 0.5 }}>
               <View style={styles.inline}>
                 <Text style={styles.textChart}>1D</Text>
                 <Text style={styles.textChart}>1W</Text>
@@ -94,15 +97,17 @@ export default class ChartExample extends React.PureComponent {
                 <Text style={styles.textChart}>ALL</Text>
               </View>
             </View>
-            <AreaChart
-              style={{ flex: 1, paddingTop: 20 }}
-              data={data}
-              contentInset={{ top: 30, bottom: 30 }}
-              curve={shape.curveNatural}
-              svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
-            >
-              <Grid />
-            </AreaChart>
+            <View style={{ flex: 1 }}>
+              <AreaChart
+                style={{ flex: 2 }}
+                data={data}
+                contentInset={{ top: 10, bottom: 10 }}
+                curve={shape.curveNatural}
+                svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
+              >
+                <Grid />
+              </AreaChart>
+            </View>
           </CardContent>
         ))}
       </Card>
@@ -127,18 +132,18 @@ const styles = StyleSheet.create({
   },
   inline: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   textContent: {
-    fontSize: 30,
+    fontSize: 0.015 * windowWidth,
     fontWeight: "bold"
   },
   textChart: {
-    fontSize: 20,
+    fontSize: 0.015 * windowWidth,
     fontWeight: "bold",
     color: "#2126c2"
   },
   textNote: {
-    fontSize: 18
+    fontSize: 0.015 * windowWidth
   }
 })

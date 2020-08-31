@@ -9,35 +9,36 @@ import {
   CardImage,
 } from 'react-native-cards';
 
-const CardEevee = ({ type }) => (
+const OrdersCard = ({ type }) => (
   <Card style={styles.borderClass}>
     <CardImage
       type={type}
-      title="Eeveelutions"
+      title="Orders"
       source={{
         uri:
-          'https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg',
+          'https://i.pinimg.com/originals/82/4a/ce/824ace8669d672e8d9ba4990c418846f.jpg',
       }}
     />
   </Card>
-)
+);
 
-export default CardEevee;
-// export default class CardEevee extends Component {
+export default OrdersCard;
+
+// export default class CardAquatico extends Component {
 //   render() {
 //     return (
 //       <Card style={styles.borderClass}>
 //         <CardImage
 //           source={{
 //             uri:
-//               'https://s.aficionados.com.br/imagens/eevee-evolutions_cke.jpg',
+//               'https://i.pinimg.com/originals/82/4a/ce/824ace8669d672e8d9ba4990c418846f.jpg',
 //           }}
-//           title="Eeveelutions"
+//           title="Water Type"
 //         />
 //       </Card>
 //     );
 //   }
-// }
+// };
 
 const styles = StyleSheet.create({
   borderClass:

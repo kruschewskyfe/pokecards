@@ -7,7 +7,7 @@ import CardsLayout from '../../components/Cards/CardsLayout';
 import Menu from '../../components/Menu';
 import ChartExample from '../../components/Cards/Chart';
 
-import { Dashboards } from '../../components/DashboardList/dashboard';
+import { Dashboards } from '../../services/dashboard';
 
 const myIcon = <Icon name="menu" size={40} color="#fff" />
 

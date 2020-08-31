@@ -7,30 +7,30 @@ export const Dashboards = [
     "listCards": [
       {
         "id": "1",
-        "name": "eevee",
+        "name": "portfolio",
         "props": {
-          "type": "eevee"
+          "type": "portfolio"
         }
       },
       {
         "id": "2",
-        "name": "pikachu",
+        "name": "instrument",
         "props": {
-          "type": "pikachu"
+          "type": "instrument"
         }
       },
       {
         "id": "3",
-        "name": "aquatico",
+        "name": "watchlist",
         "props": {
-          "type": "aquatico"
+          "type": "watchlist"
         }
       },
       {
         "id": "4",
-        "name": "dragonite",
+        "name": "news",
         "props": {
-          "type": "dragonite"
+          "type": "news"
         }
       }
     ]
@@ -43,16 +43,16 @@ export const Dashboards = [
     "listCards": [
       {
         "id": "1",
-        "name": "aquatico",
+        "name": "order",
         "props": {
-          "type": "aquatico"
+          "type": "order"
         }
       },
       {
         "id": "2",
-        "name": "pikachu",
+        "name": "instrument",
         "props": {
-          "type": "pikachu"
+          "type": "instrument"
         }
       }
     ]
@@ -65,9 +65,9 @@ export const Dashboards = [
     "listCards": [
       {
         "id": "1",
-        "name": "dragonite",
+        "name": "instrument",
         "props": {
-          "type": "dragonite"
+          "type": "instrument"
         }
       }
     ]
@@ -80,9 +80,9 @@ export const Dashboards = [
     "listCards": [
       {
         "id": "1",
-        "name": "pikachu",
+        "name": "watchlist",
         "props": {
-          "type": "pikachu"
+          "type": "watchlist"
         }
       },
       {
@@ -109,30 +109,30 @@ export const Dashboards = [
     "listCards": [
       {
         "id": "1",
-        "name": "eevee",
+        "name": "instrument",
         "props": {
-          "type": "eevee"
+          "type": "instrument"
         }
       },
       {
         "id": "2",
-        "name": "eevee",
+        "name": "instrument",
         "props": {
-          "type": "eevee"
+          "type": "instrument"
         }
       },
       {
         "id": "3",
-        "name": "eevee",
+        "name": "instrument",
         "props": {
-          "type": "eevee"
+          "type": "instrument"
         }
       },
       {
         "id": "4",
-        "name": "eevee",
+        "name": "instrument",
         "props": {
-          "type": "eevee"
+          "type": "instrument"
         }
       }
     ]

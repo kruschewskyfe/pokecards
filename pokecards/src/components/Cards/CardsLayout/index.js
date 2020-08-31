@@ -1,20 +1,24 @@
 import React, { Component, createElement } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-import CardPikachu from '../CardPikachu';
-import CardDragonite from '../CardDragonite';
+import WatchListCard from '../WatchListCard';
+import NewsCard from '../NewsCard';
 import CardEevee from '../CardEevee';
-import CardAquatico from '../CardAquatico';
+import OrdersCard from '../OrdersCard';
 import ChartExample from '../Chart';
+import InstrumentCard from '../InstrumentCard';
+import PortfolioCard from '../PortfolioCard';
 
 export default class CardsLayout extends Component {
 
   components = {
-    pikachu: CardPikachu,
-    dragonite: CardDragonite,
+    watchlist: WatchListCard,
+    news: NewsCard,
     eevee: CardEevee,
-    aquatico: CardAquatico,
-    chart: ChartExample
+    order: OrdersCard,
+    chart: ChartExample,
+    instrument: InstrumentCard,
+    portfolio: PortfolioCard
   };
 
   rendererInline(listLines) {

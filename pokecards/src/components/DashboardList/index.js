@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
-import { View, Text, StyleSheet, Button, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Button, Dimensions, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Dashboards } from './dashboard';
+import { Dashboards } from '../../services/dashboard';
 import { ListItem, Left, Thumbnail, Body, Header, Footer, Right } from 'native-base';
 
 const windowWidth = Dimensions.get('window').width;
@@ -35,7 +35,9 @@ const DashboardList = ({ navigation }) => {
         </Suspense>
       </View>
       <Footer>
-        <Button title="Voltar" style={styles.footer} onPress={() => navigation.goBack()} />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text style={styles.footer}>Voltar</Text>
+        </TouchableOpacity>
       </Footer>
     </>
   )
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
   },
   list: {
     alignSelf: "flex-start",
-    height: windowHeight / 6,
+    height: windowHeight / 7,
     width: windowWidth / 2.15,
     borderWidth: 10,
     borderColor: 'transparent',
@@ -60,8 +62,8 @@ const styles = StyleSheet.create({
     elevation: 8
   },
   image: {
-    height: 140,
-    width: 140
+    height: 90,
+    width: 90
   },
   text: {
     fontSize: 23
