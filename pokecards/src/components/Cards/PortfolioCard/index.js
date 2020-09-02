@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Card } from 'react-native-cards';
 import { DataTable } from 'react-native-paper';
@@ -15,6 +15,13 @@ const alertItemName = (item) => {
 console.log(ListAPI[0].data.equities.company[0].name)
 
 const PortfolioCard = ({ type }) => {
+  const [data, setData] = useState([])
+
+  function selectedRow(value) {
+    setData({ ...data, value })
+  }
+
+  console.log(data)
   return (
     <Card style={styles.borderClass}>
       {
@@ -48,8 +55,8 @@ const PortfolioCard = ({ type }) => {
                   {
                     equities.company.map((company, j) => {
                       return (
-                        <DataTable.Row key={j} onPress={() => alertItemName(company.name)}>
-                          <DataTable.Cell>{company.name}</DataTable.Cell>
+                        <DataTable.Row key={j} name="data" onPress={() => selectedRow(company)}>
+                          <DataTable.Cell >{company.name}</DataTable.Cell>
                           <DataTable.Cell numeric>{company.props.percentage}</DataTable.Cell>
                           <DataTable.Cell numeric>{company.props.value}</DataTable.Cell>
                         </DataTable.Row>

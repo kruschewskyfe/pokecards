@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
-    marginLeft: 70
+    marginLeft: 160
   },
   footer: {
     color: '#fff',

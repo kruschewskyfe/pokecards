@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Card } from 'react-native-cards';
 import { DataTable } from 'react-native-paper';
@@ -8,6 +8,8 @@ import ExpandIcon from 'react-native-vector-icons/MaterialIcons';
 import { WatchlistAPI } from '../../../services/watchlist';
 
 const WatchListCard = ({ type }) => {
+  const [data] = useState({ data: [] })
+
   return (
     <Card style={styles.borderClass}>
       <View style={{ flex: 0.2, flexDirection: "row", justifyContent: "space-between", margin: 5 }}>

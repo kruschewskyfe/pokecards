@@ -3,7 +3,6 @@ import { View, StyleSheet, Text } from 'react-native';
 
 import WatchListCard from '../WatchListCard';
 import NewsCard from '../NewsCard';
-import CardEevee from '../CardEevee';
 import OrdersCard from '../OrdersCard';
 import ChartExample from '../Chart';
 import InstrumentCard from '../InstrumentCard';
@@ -14,7 +13,6 @@ export default class CardsLayout extends Component {
   components = {
     watchlist: WatchListCard,
     news: NewsCard,
-    eevee: CardEevee,
     order: OrdersCard,
     chart: ChartExample,
     instrument: InstrumentCard,
